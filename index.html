@@ -85,6 +85,17 @@ figcaption b { color: var(--fg); font-weight: 500; }
 .moments { display: grid; gap: clamp(36px, 6vw, 72px); padding-bottom: clamp(56px, 9vw, 120px); }
 .moments .label { display: block; margin-bottom: 14px; }
 
+/* learnings */
+.learn { border-top: 1px solid var(--line); padding-block: clamp(40px, 6vw, 80px); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: clamp(24px, 5vw, 80px); }
+.learn h2 { margin: 0; font-weight: 500; font-size: 22px; line-height: 1.4; }
+.learn ul { list-style: none; margin: 0; padding: 0; }
+.learn li { display: grid; grid-template-columns: 132px minmax(0, 1fr); gap: 6px 24px; padding-block: 22px; border-bottom: 1px solid var(--line); }
+.learn li:first-child { padding-top: 0; }
+.learn li:last-child { border-bottom: 0; padding-bottom: 0; }
+.learn li .mono { padding-top: 5px; }
+.learn li p { margin: 0; max-width: 36em; }
+.learn li p em { font-style: normal; color: var(--accent); font-weight: 500; }
+
 /* about */
 .about { border-top: 1px solid var(--line); padding-block: clamp(40px, 6vw, 80px); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: clamp(24px, 5vw, 80px); }
 .about h2 { margin: 0; font-weight: 500; font-size: 22px; line-height: 1.4; }
@@ -104,7 +115,9 @@ dialog img { display: block; max-width: 96vw; max-height: 92vh; width: auto; hei
 dialog button { position: absolute; top: -40px; right: 0; background: none; border: 1px solid rgba(255,255,255,.4); color: #fff; font: 12px var(--font-mono); letter-spacing: .08em; padding: 6px 12px; border-radius: 999px; cursor: pointer; }
 
 @media (max-width: 760px) {
-  .about { grid-template-columns: 1fr; }
+  .about, .learn { grid-template-columns: 1fr; }
+  .learn li { grid-template-columns: 1fr; }
+  .learn li .mono { padding-top: 0; }
   .meta div { padding-right: 0; }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -164,6 +177,28 @@ dialog button { position: absolute; top: -40px; right: 0; background: none; bord
       </div>
       <figcaption><span><b>ผู้เข้าอบรมรุ่น 9</b> ณ OR Academy</span><span>มิถุนายน 2569</span></figcaption>
     </figure>
+  </section>
+
+  <section class="learn" aria-label="สิ่งที่ได้เรียนรู้">
+    <h2>สิ่งที่ได้เรียนรู้</h2>
+    <ul>
+      <li>
+        <span class="mono">ศึกษาดูงาน</span>
+        <p>เยี่ยมชมโรงไฟฟ้าพระนครเหนือ, OR Academy, สายการผลิตกาแฟ Café Amazon และคลังน้ำมันลำลูกกา ได้เห็นหน้างานจริงตั้งแต่การผลิตไฟฟ้า การผลิตกาแฟ ไปจนถึงการจัดเก็บน้ำมัน</p>
+      </li>
+      <li>
+        <span class="mono">งานกลุ่ม</span>
+        <p>ทำงานร่วมกับเพื่อนร่วมทีมที่มาจากต่างสาขา และนำเสนอผลงานเป็นสไลด์และวิดีโอ ในหัวข้อ <em>ทำไมราคาน้ำมันไทยถึงอิงตลาดสิงคโปร์</em></p>
+      </li>
+      <li>
+        <span class="mono">บรรยายพิเศษ</span>
+        <p>ฟังบรรยายจาก Huawei เรื่องอินเวอร์เตอร์ และแนวทางการพัฒนาพลังงานหมุนเวียน (Renewable Energy) ของประเทศไทย</p>
+      </li>
+      <li>
+        <span class="mono">รายวิชาอื่น</span>
+        <p>และเนื้อหารายวิชาอื่นๆ ตลอดหลักสูตร</p>
+      </li>
+    </ul>
   </section>
 
   <section class="about">
